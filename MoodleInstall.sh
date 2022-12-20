@@ -21,36 +21,14 @@ ins()
 	sudo apt-get install apache2 mysql-client mysql-server php7.4 libapache2-mod-php;
 	sudo a2dismod php8.1;
 	sudo a2enmod php7.4;
-	sudo apt-get install graphviz;
-	sudo apt install aspell;
-	sudo apt install ghostscript;
-	sudo apt install clamav;
-	sudo apt install php7.4-pspell;
-	sudo apt install php7.4-curl;
-	sudo apt install php7.4-gd;
-	sudo apt install php7.4-intl;
-	sudo apt install php7.4-mysql;
-	sudo apt install php7.4-xml;
-	sudo apt install php7.4-xmlrpc;
-	sudo apt install php7.4-ldap;
-	sudo apt install php7.4-zip;
-	sudo apt install php7.4-soap;
-	sudo apt install php7.4-mbstring;
-	sudo apt install git;
+	sudo apt install software-properties-common;
+	sudo add-apt-repository ppa:ondrej/php;
+	sudo apt update;
+	sudo apt install graphviz aspell ghostscript clamav php7.4-pspell php7.4-curl php7.4-gd php7.4-intl php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-ldap php7.4-zip php7.4-soap php7.4-mbstring;
 	sudo systemctl restart apache2;
 	cd /opt;
 	sudo git clone git://git.moodle.org/moodle.git;
-	cd moodle;
-	sudo git branch -a;
-	sudo git branch --track MOODLE_400_STABLE origin/MOODLE_400_STABLE;
-	sudo git checkout MOODLE_400_STABLE;
-	sudo cp -R /opt/moodle /var/www/html/;
-	sudo chmod -R 0777 /var/www/html/moodle;
-	sudo mkdir /var/moodledata;
-	sudo chown -R www-data /var/moodledata;
-	sudo chmod -R 0777 /var/moodledata;
-	sudo mysql -u root -p;
-	
+	cd moodle;	
 }
 ins
 
